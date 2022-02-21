@@ -120,9 +120,19 @@
 
 ## Deep-learning Model : 
 
+- from keras.models import Sequential
+- from keras.layers import LSTM
+- from keras.layers.core import Dense, Dropout
 
+- Defining the Architecture of LSTM :- 
+    - Initiliazing the sequential model : model = Sequential()
+    - Configuring the parameters : model.add(LSTM(n_hidden, input_shape=(timesteps, input_dim)))
+    - Adding a dropout layer : model.add(Dropout(0.5))
+    - Adding a dense output layer with sigmoid activation : model.add(Dense(n_classes, activation='sigmoid'))
 
-
+- we have only 7352 data points or time series, deep learning require lots of data, so we can easily overfit, so, dropout is used to avoid overfit
+- With a simple 2 layer architecture we got 90.09% accuracy and a loss of 0.30
+- We can further imporve the performace with Hyperparameter tuning
 
 
 
